@@ -1,0 +1,41 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dimRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.dimX {
+  color: var(--ink-muted);
+}
+
+.sideRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.sideLabel {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.preview {
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  background: var(--surface-subtle);
+  border-radius: var(--radius-md);
+  min-height: 180px;
+}

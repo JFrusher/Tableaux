@@ -1,0 +1,47 @@
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border-radius: var(--radius-md);
+  color: var(--ink-soft);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.ghost:hover {
+  background: var(--surface-subtle);
+  color: var(--ink);
+}
+
+.solid {
+  background: var(--accent);
+  color: #fff;
+}
+.solid:hover {
+  background: var(--accent-hover);
+}
+
+.active {
+  background: var(--accent-light);
+  color: var(--accent-hover);
+}
+
+/* Variant for placement on the dark left panel / dark toolbars. */
+.onDark {
+  color: var(--panel-text);
+}
+.onDark:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.onDark.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}

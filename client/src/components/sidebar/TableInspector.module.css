@@ -1,0 +1,97 @@
+.inspector {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.typeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-1);
+}
+.typeBtn {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+.typeBtn:hover {
+  background: var(--surface-subtle);
+}
+.typeActive {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.seatedList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.seatedRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.seatedName {
+  flex: 1;
+  text-align: left;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.seatedName:hover {
+  background: var(--surface-subtle);
+  color: var(--accent-hover);
+}
+.emptySeated {
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+}
+
+.footer {
+  padding: var(--space-4);
+}
+
+.dimRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.dimX {
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+}
+
+.perSide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.perSideRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.perSideLabel {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}

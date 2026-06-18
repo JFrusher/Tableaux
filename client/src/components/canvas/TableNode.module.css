@@ -1,0 +1,148 @@
+.node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  cursor: grab;
+  touch-action: none;
+}
+.node:active {
+  cursor: grabbing;
+}
+
+.selected {
+  z-index: 5;
+}
+.dragOver {
+  z-index: 6;
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  filter: drop-shadow(var(--shadow-sm));
+}
+.node:hover .svg {
+  filter: drop-shadow(var(--shadow-md));
+}
+
+.count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  user-select: none;
+}
+
+.label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: var(--text-table);
+  color: var(--ink);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.labelInput {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--text-table);
+  color: var(--ink);
+  background: var(--surface-raised);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 1px 4px;
+}
+
+.fullBadge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--danger);
+  color: #fff;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  z-index: 6;
+}
+
+.warnBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(45%, -45%);
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--warn);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+  z-index: 4;
+}
+
+/* ── table-mode name grid ──────────────────────────────────────────────────
+   A centred overlay of guest name boxes shown in 'table' mode. It may extend
+   beyond the table shape; a matching gridDrop target (see TableNode) makes the
+   whole area a drop zone so guests can be dropped at any zoom level. */
+.grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.gridCount {
+  flex: 0 0 auto;
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  line-height: 16px;
+  pointer-events: none;
+  user-select: none;
+}
+.gridBoxes {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Empty seats: see-through dashed placeholders so the table shape shows through. */
+.emptyBox {
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+  background: transparent;
+  pointer-events: none;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+.emptyBoxActive {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}

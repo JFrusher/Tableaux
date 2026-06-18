@@ -1,0 +1,80 @@
+.palette {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-1);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 58px;
+  padding: var(--space-1) var(--space-1) 3px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: grab;
+  touch-action: none;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+.item:hover {
+  background: var(--surface-subtle);
+  border-color: var(--border);
+}
+.item:active {
+  cursor: grabbing;
+}
+.dragging {
+  opacity: 0.4;
+}
+
+.thumb {
+  display: grid;
+  place-items: center;
+  height: 32px;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Saved presets: a draggable grab area with a small delete button overlaid. */
+.presetItem {
+  position: relative;
+  padding: 0;
+  cursor: default;
+}
+.presetGrab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  padding: var(--space-1) var(--space-1) 3px;
+  border: none;
+  background: none;
+  cursor: grab;
+  touch-action: none;
+}
+.presetGrab:active {
+  cursor: grabbing;
+}
+.presetDelete {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+.presetItem:hover .presetDelete {
+  opacity: 1;
+}

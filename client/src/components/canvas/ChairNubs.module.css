@@ -1,0 +1,12 @@
+.chairs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.chairs circle {
+  fill: var(--surface-raised);
+  stroke: var(--border);
+  stroke-width: 1.25;
+}

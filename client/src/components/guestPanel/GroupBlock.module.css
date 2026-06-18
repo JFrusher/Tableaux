@@ -1,0 +1,135 @@
+.group {
+  margin-bottom: var(--space-1);
+}
+
+.dragging {
+  opacity: 0.4;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-1);
+  border-radius: var(--radius-md);
+}
+.header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.handle {
+  display: flex;
+  align-items: center;
+  flex: none;
+  padding: 4px 2px;
+  color: rgba(231, 229, 228, 0.4);
+  cursor: grab;
+  touch-action: none;
+}
+.handle:hover {
+  color: var(--panel-text);
+}
+.handle:active {
+  cursor: grabbing;
+}
+
+.swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex: none;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 0;
+  color: var(--panel-text);
+}
+
+.chevron {
+  flex: none;
+  color: rgba(231, 229, 228, 0.5);
+}
+
+.name {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nameInput {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  color: var(--panel-text);
+  padding: 2px 6px;
+}
+
+.count {
+  flex: none;
+  font-size: var(--text-xs);
+  color: rgba(231, 229, 228, 0.5);
+  min-width: 18px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.recolour {
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-6);
+}
+
+.members {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: var(--space-1) 0 var(--space-2) 12px;
+  padding-left: var(--space-3);
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.emptyHint {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: rgba(231, 229, 228, 0.4);
+}
+
+.avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: var(--space-1) 0 var(--space-2) var(--space-6);
+  cursor: pointer;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--panel-text);
+  font-size: 9px;
+  font-weight: var(--weight-semibold);
+}
+.avatarAssigned {
+  opacity: 0.4;
+}
+
+.avatarMore {
+  display: flex;
+  align-items: center;
+  font-size: var(--text-xs);
+  color: rgba(231, 229, 228, 0.5);
+  padding-left: 2px;
+}

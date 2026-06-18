@@ -1,0 +1,110 @@
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  filter: drop-shadow(var(--shadow-sm));
+}
+
+.space {
+  cursor: grab;
+}
+.space:active {
+  cursor: grabbing;
+}
+
+.vertex {
+  fill: var(--surface-raised);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  cursor: grab;
+}
+.vertex:hover {
+  fill: var(--accent-light);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink-muted);
+  pointer-events: none;
+  user-select: none;
+}
+
+.handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  border: 1.5px solid var(--accent);
+  cursor: nwse-resize;
+  touch-action: none;
+}
+.handle:hover {
+  background: var(--accent-light);
+}
+
+/* Move grip: a small badge anchored just outside the space's top-left corner.
+   It's the only target that drags the space, so clicking the fill can't move it. */
+.moveHandle {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-radius: var(--radius-full, 999px);
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+  cursor: grab;
+  touch-action: none;
+}
+.moveHandle:hover {
+  background: var(--accent-hover);
+}
+.moveHandle:active {
+  cursor: grabbing;
+}
+
+.renameInput {
+  position: absolute;
+  width: 140px;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: var(--surface-raised);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+}
+
+.colourPop {
+  position: absolute;
+  z-index: 10;
+  padding: var(--space-2);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-2, 0 12px 32px rgba(0, 0, 0, 0.12));
+}
+
+.scaleBar {
+  position: absolute;
+  height: 6px;
+  border: 1.5px solid var(--ink-muted);
+  border-top: none;
+  pointer-events: none;
+  user-select: none;
+}
+.scaleLabel {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}

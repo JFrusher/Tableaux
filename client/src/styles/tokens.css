@@ -1,0 +1,93 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Tableaux design tokens. The aesthetic is editorial, warm, considered —
+   a productivity tool built by someone who cares about typography.
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+  /* ── Palette ── */
+  --ink: #1c1917; /* primary text, headings */
+  --ink-soft: #57534e; /* secondary text, labels */
+  --ink-muted: #78736e; /* placeholder, disabled, hints — darkened to ~4.5:1 (WCAG AA) on --surface */
+  --surface: #fafaf9; /* page background */
+  --surface-raised: #ffffff; /* cards, panels */
+  --surface-subtle: #f5f5f4; /* input backgrounds, table hover */
+  --border: #e7e5e4; /* panel edges, dividers */
+  --accent: #7c6f5b; /* primary action, selection rings (warm taupe) */
+  --accent-hover: #5c5143; /* hover state */
+  --accent-light: #ede8e1; /* accent tint backgrounds */
+  --ok: #4a7c59; /* full table ring, success states */
+  --warn: #c07c2a; /* warning badges */
+  --danger: #a63228; /* errors, full-table rejection */
+  --panel-bg: #1e1c1a; /* left sidebar background */
+  --panel-text: #e7e5e4; /* text on dark sidebar */
+
+  /* Tints derived for soft fills (kept in tokens so usage stays consistent) */
+  --ok-light: #e4ede6;
+  --warn-light: #f4e9d8;
+  --danger-light: #f1ddd9;
+
+  /* ── Typefaces ── */
+  --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+
+  /* ── Type scale ── */
+  --text-xs: 11px; /* badges, meta labels — Inter 500 */
+  --text-sm: 13px; /* secondary UI — Inter 400 */
+  --text-base: 16px; /* body — Inter 400 (16px avoids mobile zoom-on-focus & aids readability) */
+  --text-ui: 13px; /* buttons, inputs — Inter 500 */
+  --text-label: 11px; /* section headers — Inter 600 uppercase, tracked */
+  --text-display: 22px; /* app name, modal headings — Cormorant 600 */
+  --text-table: 13px; /* table labels on canvas — Cormorant 400 */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --tracking-label: 0.08em;
+
+  /* ── Spacing (8px base grid) ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* ── Radii ── */
+  --radius-sm: 4px; /* badges, chips */
+  --radius-md: 8px; /* cards, buttons */
+  --radius-lg: 12px; /* modals, panels */
+  --radius-full: 9999px; /* avatar initials, round tables */
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-drag: 0 12px 32px rgba(0, 0, 0, 0.18);
+
+  /* ── Canvas ── */
+  --grid-dot: rgba(28, 25, 23, 0.11);
+  --grid-line: rgba(28, 25, 23, 0.06);
+
+  /* ── Layout ── */
+  --toolbar-height: 60px;
+  --panel-left-width: 280px;
+  --panel-right-width: 260px;
+
+  /* ── Motion ── */
+  --transition-fast: 120ms ease-out;
+  --transition-base: 200ms ease;
+  --transition-modal: 150ms ease-out;
+
+  /* ── Elevation order ── */
+  --z-canvas: 0;
+  --z-panel: 10;
+  --z-toolbar: 20;
+  --z-controls: 30;
+  --z-modal: 100;
+  --z-toast: 200;
+  --z-drag: 300;
+}

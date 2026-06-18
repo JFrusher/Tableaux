@@ -1,0 +1,128 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  color: var(--ink);
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: var(--weight-semibold);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.statLabel {
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
+
+.section {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.sectionLabel {
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-3);
+}
+
+.bars,
+.tables {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.barRow,
+.tableRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  text-align: left;
+}
+.tableRow {
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  margin: -2px;
+}
+.tableRow:hover {
+  background: var(--surface-subtle);
+}
+
+.barName,
+.tableName {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: 96px;
+  flex: none;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex: none;
+}
+
+.track {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.barCount,
+.tableCount {
+  width: 34px;
+  flex: none;
+  text-align: right;
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  padding: var(--space-6) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  text-align: center;
+}

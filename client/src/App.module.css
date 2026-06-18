@@ -1,0 +1,20 @@
+.boot {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-2);
+  background: var(--surface);
+}
+
+.boot h1 {
+  font-size: 56px;
+  font-weight: var(--weight-semibold);
+  color: var(--accent);
+  letter-spacing: 0.01em;
+}
+
+.tagline {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}

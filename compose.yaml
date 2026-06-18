@@ -1,0 +1,40 @@
+# Run the whole app (API + built client) as one container.
+#
+#   docker compose up -d --build      # build & start in the background
+#   docker compose logs -f            # tail logs
+#   docker compose down               # stop & remove
+#
+# Out of the box this runs in LEGACY single-tenant, NO-AUTH mode: data persists
+# to the `tableaux-data` volume — no external services required. Open
+# http://localhost:3001 once the health check is passing.
+#
+# To run in Supabase / SaaS mode instead, copy `.env.example` to `.env`, fill in
+# the SUPABASE_* and VITE_* values, then `docker compose up -d --build`. The
+# VITE_* values are baked into the client bundle at build time (see below), so a
+# rebuild is required whenever they change.
+services:
+  app:
+    build:
+      context: .
+      args:
+        # Inlined into the client bundle at build time. Blank = local no-auth mode.
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL:-}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY:-}
+        VITE_PUBLIC_URL: ${VITE_PUBLIC_URL:-http://localhost:3001}
+    ports:
+      - "${PORT:-3001}:3001"
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      # Same-origin in the bundled artifact; override for a separate-origin client.
+      CLIENT_ORIGIN: ${CLIENT_ORIGIN:-http://localhost:3001}
+      # Runtime-only Supabase config (service-role key is NEVER built into the client).
+      SUPABASE_URL: ${SUPABASE_URL:-}
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY:-}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:-}
+    volumes:
+      - tableaux-data:/data
+    restart: unless-stopped
+
+volumes:
+  tableaux-data:

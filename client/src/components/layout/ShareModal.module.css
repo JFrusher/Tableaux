@@ -1,0 +1,61 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+}
+.note {
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+}
+.share {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.shareTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.scope {
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  color: var(--ink);
+}
+.shareActions {
+  display: flex;
+  gap: 2px;
+}
+.url {
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
+  word-break: break-all;
+  background: var(--surface-subtle);
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+}
+.qr {
+  width: 160px;
+  height: 160px;
+  align-self: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /$
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+# Per-guest share and seat-lookup links are private capability URLs — keep them out of indexes.
+Disallow: /share/
+Disallow: /seat/

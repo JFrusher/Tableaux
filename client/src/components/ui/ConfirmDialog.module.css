@@ -1,0 +1,5 @@
+.message {
+  font-size: var(--text-base);
+  color: var(--ink-soft);
+  line-height: var(--leading-normal);
+}

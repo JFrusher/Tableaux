@@ -1,0 +1,50 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 1px 3px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  /* Match the seat-level font exactly (SeatSlot uses these tokens). */
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: 1.15;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  pointer-events: auto;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+.box:hover {
+  background: var(--accent-hover);
+}
+
+.selected {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
+/* While being dragged out, fade the box left behind. */
+.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.name {
+  min-width: 0;
+  /* Wrap at spaces so two-word names use a second line when the box allows it;
+     the label form is pre-chosen to fit, and overflow is clipped as a safety net. */
+  white-space: normal;
+  overflow-wrap: normal;
+  text-align: center;
+  overflow: hidden;
+}

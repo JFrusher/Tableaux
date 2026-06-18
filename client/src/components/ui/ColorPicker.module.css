@@ -1,0 +1,47 @@
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12) inset;
+  transition: transform var(--transition-fast);
+}
+.swatch:hover {
+  transform: scale(1.12);
+}
+.swatch.active {
+  border-color: var(--surface-raised);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.12) inset,
+    0 0 0 2px var(--accent);
+}
+
+.clear {
+  background:
+    linear-gradient(to top left, transparent 46%, var(--danger) 46%, var(--danger) 54%, transparent 54%),
+    var(--surface-subtle);
+}
+
+.custom {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: none;
+  cursor: pointer;
+}
+.custom::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.custom::-webkit-color-swatch {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+}

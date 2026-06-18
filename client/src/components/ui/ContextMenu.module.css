@@ -1,0 +1,73 @@
+.menu {
+  position: fixed;
+  z-index: var(--z-modal);
+  min-width: 188px;
+  padding: var(--space-1);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  animation: menuIn var(--transition-fast);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-ui);
+  color: var(--ink);
+  text-align: left;
+}
+
+.item:hover:not(:disabled) {
+  background: var(--surface-subtle);
+}
+
+.item:disabled {
+  color: var(--ink-muted);
+  cursor: not-allowed;
+}
+
+.itemIcon {
+  flex: none;
+  color: var(--ink-soft);
+}
+
+.item:hover:not(:disabled) .itemIcon {
+  color: var(--ink);
+}
+
+.itemLabel {
+  flex: 1;
+}
+
+.hint {
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
+}
+
+.danger {
+  color: var(--danger);
+}
+.danger .itemIcon {
+  color: var(--danger);
+}
+.danger:hover:not(:disabled) {
+  background: var(--danger-light);
+}
+
+.separator {
+  height: 1px;
+  margin: var(--space-1) 0;
+  background: var(--border);
+}
+
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
