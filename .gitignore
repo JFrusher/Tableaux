@@ -39,3 +39,11 @@ yarn-error.log*
 .env.*.local
 
 dockerfile
+
+# Vite temporary files
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Tools caches
+.eslintcache
+.prettiercache
