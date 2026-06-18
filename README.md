@@ -19,7 +19,7 @@ designed to feel like a considered editorial tool rather than a spreadsheet.
 ## Quick start
 
 ```bash
-git clone https://github.com/yourname/tableaux
+git clone https://github.com/JFrusher/tableaux
 cd tableaux && npm install
 npm run dev
 ```
@@ -204,7 +204,7 @@ tracker.
 
 ## Maintainers
 
-Maintained by  Built as an
+Maintained by Jacob Frusher, Built as an
 editorial‑quality take on wedding seating planning.
 
 ## Licence
