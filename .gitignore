@@ -38,7 +38,8 @@ yarn-error.log*
 .env.local
 .env.*.local
 
-dockerfile
+Dockerfile
+HOSTING.md
 
 # Vite temporary files
 vite.config.js.timestamp-*
